@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/index.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="stage">
+    <div class="ilbuni"></div>
+    <div class="ilbuni"></div>
+    <div class="ilbuni"></div>
+  </div>
+
+  <script>
+    (function() {
+      const ilbuniGroup = document.querySelectorAll('.ilbuni');
+      const stage = document.querySelector('.stage')
+
+      function clickHandler(e) {
+        // console.log(this);
+        // console.log(e.currentTarget);
+        // stage.removeChild(this);
+        this.parentNode.removeChild(this);
+      }
+
+      for (ilbuni of ilbuniGroup) {
+        ilbuni.addEventListener('click', clickHandler)
+      }
+    })()
+  </script>
+</body>
+</html>
