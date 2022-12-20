@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button class="btn">cancel</button>
+</body>
+<script>
+  let timeId;
+  const btn = document.querySelector('.btn')
+
+  function sample() {
+    console.log('sample');
+    // timeId = requestAnimationFrame(sample)
+  }
+  requestAnimationFrame(sample)
+  // sample()
+
+  // timeId = setInterval(sample, 1000)
+
+  btn.addEventListener('click', function() {
+    cancelAnimationFrame(timeId)
+    // clearInterval(timeId);
+  })
+
+  // setTimeout(() => {
+  //   console.log('set time out')
+  // }, 1000)
+</script>
+</html>
