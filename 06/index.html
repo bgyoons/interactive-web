@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @keyframes ball-ani {
+      from {
+        transform: translate(0, 0);
+      }
+      to {
+        transform: translate(200px, 200px);
+      }
+    }
+
+    .ball {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: aqua;
+      transition: 1s;
+      animation: ball-ani 1s 3 alternate forwards;
+    }
+
+    .ball.end {
+      background-color: blue;
+    }
+
+    .ball.ani-end {
+      border: 5px solid violet;
+    }
+  </style>
+</head>
+<body>
+  <div class="ball"></div>
+</body>
+<script>
+  const ballEle = document.querySelector('.ball')
+
+  ballEle.addEventListener('animationiteration', function() {
+    console.log('again');
+  })
+
+  ballEle.addEventListener('click', function() {
+    ballEle.style.animation = 'ball-ani 1s 3 alternate forwards'
+  })
+
+  ballEle.addEventListener('animationstart', function() {
+    ballEle.classList.add('ani-end')
+  })
+
+  ballEle.addEventListener('animationend', function() {
+    ballEle.classList.add('ani-end')
+  })
+  
+  ballEle.addEventListener('transitionend', function(e) {
+    // console.log(e.elapsedTime);  // transition duration
+    // console.log(e.propertyName);
+    ballEle.classList.add('end')
+  })
+  
+  ballEle.addEventListener('transitionstart', function(e) {
+    ballEle.classList.add('end')
+  })
+  
+  window.addEventListener('click', function(e) {
+    ballEle.style.transform = `translate(${e.clientX - 15}px, ${e.clientY - 15}px)`
+  })
+</script>
+</html>
