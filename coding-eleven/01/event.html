@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>돌려돌려돌림판</title>
+
+  <style>
+    body {
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 20px;
+    }
+    button {
+      font-size: 20px;
+      cursor: pointer;
+      padding: 10px 30px;
+    }
+    .arrowWrap {
+      margin: 100px;
+    }
+    .arrowWrap img {
+      transition: all 2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      let reset = document.querySelector('.reset')
+      let start = document.querySelector('.start')
+      let h1 = document.getElementsByTagName('h1')[0]
+      let img = document.getElementsByTagName('img')[0]
+
+      start.addEventListener('click', function() {
+        let rotateNum = Math.round(Math.random() * 360)
+        h1.innerHTML = `${rotateNum}deg`;
+        img.style.transform = `rotate(${rotateNum + 360}deg)`;
+      })
+      
+      reset.addEventListener('click', function() {
+        h1.innerHTML = '0deg';
+        img.style.transform = 'rotate(0deg)';
+      })
+    }
+  </script>
+</head>
+<body>
+  <button type="button" class="reset">리셋</button>
+  <button type="button" class="start">회전</button>
+  <h1>0deg</h1>
+  <div class="arrowWrap">
+    <img src="./wpaUamwkeqTEnCTTNA47.jpg" alt="alcohol" class="arrow">
+  </div>
+</body>
+</html>
