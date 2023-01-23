@@ -1,0 +1,74 @@
+body {
+  overflow-x: hidden;
+  background: url(../image/bg.jpg);
+}
+
+.starBg {
+  background: url(../image/star.png);
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100vw;
+  height: 200vh;
+}
+section {
+  position: relative;
+}
+
+.top {
+  width: 100vw;
+  min-height: 300vh;
+}
+
+.title {
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding-top: 40%;
+}
+
+.bottom {
+  background: url(../image/bottom.png) center bottom/100% no-repeat;
+  width: 100%;
+  min-height: 50vh;
+}
+
+.contWrap {
+  text-align: center;
+}
+
+.contWrap ul {
+  display: flex;
+  justify-content: center;
+}
+
+.contWrap ul li {
+  list-style: none;
+  width: 130px;
+  height: 200px;
+  background-color: rgb(85, 145, 125);
+  margin: 0 10px;
+  border-radius: 10px;
+}
+
+.contWrap ul li p {
+  color: #fff;
+}
+
+h2 {
+  color: #fff;
+}
+
+.topBtn {
+  display: block;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  float: right;
+  margin-right: 30px;
+  cursor: pointer;
+}
