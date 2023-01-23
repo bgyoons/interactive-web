@@ -1,0 +1,25 @@
+@media only screen and (max-width: 720px) {
+  .album {
+    top: 40%;
+    width: 300px;
+    height: 200px;
+  }
+  .disk {
+    width: 230px;
+    height: 230px;
+  }
+  .disk_inner {
+    width: 90px;
+    height: 90px;
+  }
+  .coverImg {
+    width: 250px;
+    height: 250px;
+  }
+  .album.active {
+    left: 45%;
+  }
+  .album.active .disk {
+    left: 43%;
+  }
+}
